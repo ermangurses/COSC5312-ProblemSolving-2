@@ -4,7 +4,7 @@
 *
 * Purpose: Specification file for Queue.h to demonstrate the use of        
 *          templates with a LinkedList abstract data type using 
-		   pointers.
+           pointers.
 ************************************************************************/
 #ifndef QUEUE_H
 #define QUEUE_H
@@ -21,33 +21,31 @@ class Queue
 
       Queue();       // Default constructor
       ~Queue();      // Destructor
-	  Queue(const Queue & otherQueue); // Copy constructor
+      Queue(const Queue & otherQueue); // Copy constructor
 
-	  // Overloaded operator "="
+      // Overloaded operator "="
       const Queue <Type> & operator=(const Queue & otherQueue);
 
-	  int  sizeOf();
-	  bool isEmpty();
-	  void enqueue(Type dataIn);
-	  bool dequeue(Type & front);
-	  bool queueFront (Type & copyData);
-
+      int  sizeOf();
+      bool isEmpty();
+      void enqueue(Type dataIn);
+      bool dequeue(Type & front);
+      bool queueFront (Type & copyData);
 
    private:
 
       struct QNode
-	  {
-		 
-		  Type nodeData;
-		  QNode *next;
-	  };
+      {
+         
+          Type nodeData;
+          QNode *next;
+      };
 
-	  QNode *head,
-			*tail;
+      QNode *head,
+            *tail;
 
-	  int size;
-
-	  void copyQueue(const Queue & otherQueue);
+      int size;
+      void copyQueue(const Queue & otherQueue);
 };
 #endif
 

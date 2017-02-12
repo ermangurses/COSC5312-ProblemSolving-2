@@ -169,15 +169,16 @@ int flagContainNonAlphaNumeric, int flagContainSpace)
     }
 
 }
+
 /**********************************************************************
 *             checkWithUsername
 * 
-* Purpose : The purpose is that checking userName and passWord
+* Purpose: The purpose is that checking userName and passWord
              are same or not. 
 * 
-* Pre-condition : userName and passWord have to been entered by user.
+* Pre-condition: userName and passWord have to been entered by user.
 * 
-* Post-condition : It returns 1 if they are not same it return 0 if 
+* Post-condition: It returns 1 if they are not same it return 0 if 
                    they are same
 **********************************************************************/
 int checkWithUsername(char userName[],char passWord[])
@@ -196,14 +197,15 @@ int checkWithUsername(char userName[],char passWord[])
 /**********************************************************************
 *             checkLength
 * 
-* Purpose    : The purpose is that check length less than 8 or more 
-          than 12 
+* Purpose: The purpose is that check length less than 8 or more 
+           than 12 
 * 
-* Pre-condition  : PassWord have to been entered by user.
+* Pre-condition: PassWord have to been entered by user.
 * 
-* Post-condition: It returns 0  if it is length less than 8 or more 
-          than 12 
-          otherwise returns 1
+* Post-condition:  if it is length less than 8 or more than 12 
+                     returns 0 
+                   otherwise 
+                    returns 1
 **********************************************************************/
 int checkLength(char passWord[])
 {
@@ -224,9 +226,9 @@ int checkLength(char passWord[])
 /**********************************************************************
 *             containUpper
 * 
-* Purpose    : The purpose is checking is there any upper case letter.
+* Purpose: The purpose is checking is there any upper case letter.
 * 
-* Pre-condition  : PassWord have to been entered by user.
+* Pre-condition: PassWord have to been entered by user.
 * 
 * Post-condition: It returns 0 if it is not exist upper case letter  
                   otherwise returns 1
@@ -241,17 +243,16 @@ int containUpper(char passWord[], int length)
       return 1;
     }
   }
-
   return 0;
 }
 
 /**********************************************************************
 *             containLower
 * 
-* Purpose    : The purpose is checking is there  any lower case 
+* Purpose: The purpose is checking is there  any lower case 
                letter.
 * 
-* Pre-condition  : PassWord have to been entered by user.
+* Pre-condition: PassWord have to been entered by user.
 * 
 * Post-condition: It returns 0 if it is not exist lower case letter  
                   otherwise returns 1
@@ -266,16 +267,15 @@ int containLower(char passWord[], int length)
       return 1;
     }
   }
-
   return 0;
 }
 
 /**********************************************************************
 *             containDigit
 * 
-* Purpose    : The purpose is checking is there any digit. 
+* Purpose: The purpose is checking is there any digit. 
 * 
-* Pre-condition  :  PassWord have to been entered by user.
+* Pre-condition:  PassWord have to been entered by user.
 * 
 * Post-condition: It returns 0 if it is not exist digit  otherwise
                       returns 1
@@ -291,16 +291,14 @@ int containDigit(char passWord[], int length)
     {  
       return 1;
     }
-
   }
-
   return 0;
 }
 
 /**********************************************************************
 *             containNonAlphaNumeric
 * 
-* Purpose    : The purpose is checking is there any Non-AlphaNumeric
+* Purpose: The purpose is checking is there any Non-AlphaNumeric
                character. 
 * 
 * Pre-condition  : PassWord have to been entered by user.

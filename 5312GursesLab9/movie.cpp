@@ -18,40 +18,40 @@
 * Purpose: The constructor of a class instantiates one instance of the
 *          class when a declaration is made by the program using the
 *          class ("driver" or "client" program). It uses the clear 
-		   function (in the string class) to clear any residual data 
-		   out of the string-type attributes movieName, 
-		   lastNameOfDirector, firstNameOfDirector, and 
-		   fullNameOfDirector.
-		   It also dynamically allocates memory for the release year,
-		   critics' rating, and running time variables and set the 
-		   values of those variables to zero.
+           function (in the string class) to clear any residual data 
+           out of the string-type attributes movieName, 
+           lastNameOfDirector, firstNameOfDirector, and 
+           fullNameOfDirector.
+           It also dynamically allocates memory for the release year,
+           critics' rating, and running time variables and set the 
+           values of those variables to zero.
 *
 * Precondition:  An instance of the class has been declared.
 *
 * Postcondition: The yearOfRelease, ratingOfCritics, and runningTime 
-				 attributes have been set to zero. The String-type 
-				 attributes movieName, lastNameOfDirector, 
-				 firstNameOfDirector, fullNameOfDirector are cleared. 
+                 attributes have been set to zero. The String-type 
+                 attributes movieName, lastNameOfDirector, 
+                 firstNameOfDirector, fullNameOfDirector are cleared. 
 ************************************************************************/
 
 
 Movie::Movie()
 {
 
-	movieName.clear();
-	lastNameOfDirector.clear();
-	firstNameOfDirector.clear();
-	fullNameOfDirector.clear();
+    movieName.clear();
+    lastNameOfDirector.clear();
+    firstNameOfDirector.clear();
+    fullNameOfDirector.clear();
 
 
-	yearOfRelease   = new int;
-	ratingOfCritics = new float;
-	runningTime     = new int;
+    yearOfRelease   = new int;
+    ratingOfCritics = new float;
+    runningTime     = new int;
 
 
-	* yearOfRelease   = 0;
-	* ratingOfCritics = 0;
-	* runningTime     = 0;
+    * yearOfRelease   = 0;
+    * ratingOfCritics = 0;
+    * runningTime     = 0;
 
 
 
@@ -73,9 +73,9 @@ Movie::Movie()
 Movie::~Movie()
 {
    
-	delete  yearOfRelease;
-	delete	ratingOfCritics;
-	delete	runningTime;
+    delete  yearOfRelease;
+    delete    ratingOfCritics;
+    delete    runningTime;
 
 
 }
@@ -84,21 +84,21 @@ Movie::~Movie()
 *                       addMovieName
 *
 * Purpose: This function accepts a string as an argument and assigns it 
-		    to the movieName attribute. The movieName resized
-			to a length of 40 and padded with spaces.
+            to the movieName attribute. The movieName resized
+            to a length of 40 and padded with spaces.
 *
 * Precondition: An instance of the class has been declared &&
-				movieName has been cleared.
-				
+                movieName has been cleared.
+                
 *
 * Postcondition: movieName has been assigned the value of "movieNameF" 
-				 && The movieName resized to a length of 40 and padded 
-				 with spaces.
+                 && The movieName resized to a length of 40 and padded 
+                 with spaces.
 ************************************************************************/
 void Movie::addMovieName (string movieNameF)
 {
 
-	movieName = movieNameF; 
+    movieName = movieNameF; 
     movieName.resize(40,' ');
 
 }
@@ -106,25 +106,25 @@ void Movie::addMovieName (string movieNameF)
 *                       addLastName
 *
 * Purpose: This function accepts a string as an argument and assigns it 
-		    to the lastNameOfDirector attribute. The lastNameOfDirector
-			resized to a length of 13 and padded with spaces.
+            to the lastNameOfDirector attribute. The lastNameOfDirector
+            resized to a length of 13 and padded with spaces.
 *
 * Precondition:  An instance of the class has been declared &&
-				 lastNameOfDirector has been cleared.
+                 lastNameOfDirector has been cleared.
 *
 * Postcondition: lastNameOfDirector has been assigned the value of 
-				 "lastNameOfDirectorF" && 
-				 The lastNameOfDirector resized to a length of 13 and 
-				 padded with spaces.
+                 "lastNameOfDirectorF" && 
+                 The lastNameOfDirector resized to a length of 13 and 
+                 padded with spaces.
 ************************************************************************/
 void Movie::addLastName(string lastNameOfDirectorF )
 {
-	
-		
+    
+        
 
     lastNameOfDirector =lastNameOfDirectorF;
 
-	lastNameOfDirector.resize(13,' ');
+    lastNameOfDirector.resize(13,' ');
 
 }
 
@@ -132,16 +132,16 @@ void Movie::addLastName(string lastNameOfDirectorF )
 *                       addFirstName
 *
 * Purpose:  This function accepts a string as an argument and assigns it 
-		    to the firstNameOfDirector attribute. The firstNameOfDirector
-			resized to a length of 10 and padded with spaces.
+            to the firstNameOfDirector attribute. The firstNameOfDirector
+            resized to a length of 10 and padded with spaces.
 *
 * Precondition:   An instance of the class has been declared &&
-				  firstNameOfDirector has been cleared.
+                  firstNameOfDirector has been cleared.
 *
 * Postcondition:  firstNameOfDirector has been assigned the value of 
-				  "firstNameOfDirectorF" && 
-				  The firstNameOfDirector resized to a length of 10 
-				  and padded with spaces.
+                  "firstNameOfDirectorF" && 
+                  The firstNameOfDirector resized to a length of 10 
+                  and padded with spaces.
 ************************************************************************/
 void Movie::addFirstName( string firstNameOfDirectorF)
 {
@@ -155,89 +155,88 @@ void Movie::addFirstName( string firstNameOfDirectorF)
 *                       addYearReleased
 *
 * Purpose: This function accepts an integer as an argument and assign it 
-		    to the *yearOfRelease attribute.
+            to the *yearOfRelease attribute.
 *
 * Precondition:  An instance of the class has been declared.
 *
 * Postcondition: If yearOfReleaseF is less than 1900 or 
-				 yearOfReleaseF is more than 2012 
+                 yearOfReleaseF is more than 2012 
 *                   false is returned
 *                Else
-					*yearOfRelease has been assigned the value of 
-					'yearOfReleaseF' then 
+                    *yearOfRelease has been assigned the value of 
+                    'yearOfReleaseF' then 
 *                   true is returned
 ************************************************************************/
 bool Movie::addYearReleased( int   yearOfReleaseF)
 {
-	if(yearOfReleaseF < 1900 || yearOfReleaseF > 2012 )
-	{
-		return false;
-	}
-	else
-	{			
-		*yearOfRelease= yearOfReleaseF;
+    if(yearOfReleaseF < 1900 || yearOfReleaseF > 2012 )
+    {
+        return false;
+    }
+    else
+    {            
+        *yearOfRelease= yearOfReleaseF;
 
-		return true;	
-	}
-	
+        return true;    
+    }
+    
 }
 
 /************************************************************************
 *                       addCriticRating
 *
 * Purpose: This function accepts a float as an argument and assign it 
-		    to the *ratingOfCritics attribute.
+            to the *ratingOfCritics attribute.
 *
 * Precondition: An instance of the class has been declared.
 *
 * Postcondition: If ratingOfCriticsF is less than 1.0 or 
-				    ratingOfCriticsF is more than 4.0 
+                    ratingOfCriticsF is more than 4.0 
 *                   false is returned
 *                Else
-					*ratingOfCritics has been assigned the value of 
-					"ratingOfCriticsF" then 
+                    *ratingOfCritics has been assigned the value of 
+                    "ratingOfCriticsF" then 
 *                   true is returned
 ************************************************************************/
 bool Movie::addCriticRating( float  ratingOfCriticsF )
 {
    if( ratingOfCriticsF < 1.0 ||  ratingOfCriticsF > 4.0)
    {
-		return false;
+        return false;
    }
    else
    {
-		* ratingOfCritics = ratingOfCriticsF;
-		
-		return true;
+        * ratingOfCritics = ratingOfCriticsF;
+        
+        return true;
    }
 }
 /************************************************************************
 *                       addRunTime
 *
 * Purpose: This function accepts a integer as an argument and assign it 
-		   to the *runningTime attribute.
+           to the *runningTime attribute.
 *
 * Precondition: An instance of the class has been declared.
 *
 * Postcondition: If runningTimeF is less than 10 or 
-				 runningTimeF is more than 300 
+                 runningTimeF is more than 300 
 *                   false is returned
 *                Else
-					"*runningTime has been assigned the value of 
-					"runningTimeF" then 
+                    "*runningTime has been assigned the value of 
+                    "runningTimeF" then 
 *                   true is returned
 ************************************************************************/ 
  bool Movie::addRunTime(int  runningTimeF )
 {
    if(  runningTimeF < 10 ||   runningTimeF > 300)
    {
-		return false;
+        return false;
    }
    else
    {
-		*runningTime = runningTimeF;
-		
-		return true;
+        *runningTime = runningTimeF;    
+        return true;
    }
 }
 
@@ -245,7 +244,7 @@ bool Movie::addCriticRating( float  ratingOfCriticsF )
 *                       retrieveMovieName
 *
 * Purpose: This function provides  the driver program  with the 
-		   current string of movieName
+           current string of movieName
 *
 * Precondition: An instance of the class has been declared.
 *
@@ -260,7 +259,7 @@ string Movie::retrieveMovieName()
 *                       retrieveDirectorsLastName
 *
 * Purpose: This function provides  the driver program  with the 
-		   current string of lastNameOfDirector
+           current string of lastNameOfDirector
 *
 * Precondition: An instance of the class has been declared.
 *
@@ -275,7 +274,7 @@ string Movie::retrieveDirectorsLastName()
 *                       retrieveDirectorsFirstName
 *
 * Purpose: This function provides  the driver program  with the 
-		   current string of firstNameOfDirector
+           current string of firstNameOfDirector
 *
 * Precondition: An instance of the class has been declared.
 *
@@ -291,7 +290,7 @@ string Movie::retrieveDirectorsFirstName()
 *                       retrieveDirectorsFullName
 *
 * Purpose: This function provides  the driver program  with the 
-		   current string of fullNameOfDirector
+           current string of fullNameOfDirector
 *
 * Precondition: An instance of the class has been declared.
 *
@@ -310,7 +309,7 @@ string Movie::retrieveDirectorsFullName()
 *                       retrieveReleaseYear
 *
 * Purpose: This function provides  the driver program  with the 
-		   current value of *yearOfRelease 
+           current value of *yearOfRelease 
 *
 * Precondition: An instance of the class has been declared.
 *
@@ -318,14 +317,14 @@ string Movie::retrieveDirectorsFullName()
 ************************************************************************/
 int Movie::retrieveReleaseYear()
 {
-	return *yearOfRelease;
+    return *yearOfRelease;
 }
 
 /************************************************************************
 *                       retrieveRating
 *
 * Purpose: This function provides  the driver program  with the 
-		   current value of *ratingOfCritics 
+           current value of *ratingOfCritics 
 *
 * Precondition: An instance of the class has been declared.
 *
@@ -334,7 +333,7 @@ int Movie::retrieveReleaseYear()
 float  Movie::retrieveRating()
 {
 
-	return *ratingOfCritics;
+    return *ratingOfCritics;
 
 }
 
@@ -343,7 +342,7 @@ float  Movie::retrieveRating()
 *                       retrieveRunTime
 *
 * Purpose: This function provides  the driver program  with the 
-		   current value of *runningTime
+           current value of *runningTime
 *
 * Precondition: An instance of the class has been declared.
 *
@@ -352,7 +351,7 @@ float  Movie::retrieveRating()
  int Movie::retrieveRunTime()
 {
 
-	return  *runningTime;
+    return  *runningTime;
 
 }
 
@@ -361,47 +360,47 @@ float  Movie::retrieveRating()
 *                       makeDirectorsFullName
 *
 * Purpose:      This function concatenates lastNameOfDirector and 
-			    firstNameOfDirector string variables then assigns them 
-				into string fullNameOfDirector variable
+                firstNameOfDirector string variables then assigns them 
+                into string fullNameOfDirector variable
 *
 * Precondition: An instance of the class has been declared. 
-				LastNameOfDirector and firstNameOfDirector string 
-				variables initialized by driver program.
+                LastNameOfDirector and firstNameOfDirector string 
+                variables initialized by driver program.
 *
 * Postcondition: LastNameOfDirector and firstNameOfDirector string 
-				 variables have been concatenated then assigned into
-				 fullNameOfDirector. fullNameOfDirector variable 
-				 resized 25 characters space and padded at the end 
-				 of the field with spaces.
+                 variables have been concatenated then assigned into
+                 fullNameOfDirector. fullNameOfDirector variable 
+                 resized 25 characters space and padded at the end 
+                 of the field with spaces.
 
 ************************************************************************/
  void Movie::makeDirectorsFullName()
 {
-	int i=12;
-	string tempLastNameOfDirector;
+    int i=12;
+    string tempLastNameOfDirector;
 
-	// Copy Last Name into tempLastNameOfDirector variable
-	tempLastNameOfDirector = lastNameOfDirector;
+    // Copy Last Name into tempLastNameOfDirector variable
+    tempLastNameOfDirector = lastNameOfDirector;
 
 
-	// Find index of last letter in the  tempLastNameOfDirector
-	while(tempLastNameOfDirector[i] == ' ')
-	{
-		i--;
-	}
-		
-	// Resize tempLastNameOfDirector with respect to index i 
-	//(pad with spaces)	
-	tempLastNameOfDirector.resize(i+3,' ');
-	
-	// Put comma after the last letter of  tempLastNameOfDirector
-	tempLastNameOfDirector[i+1] = ',';
+    // Find index of last letter in the  tempLastNameOfDirector
+    while(tempLastNameOfDirector[i] == ' ')
+    {
+        i--;
+    }
+        
+    // Resize tempLastNameOfDirector with respect to index i 
+    //(pad with spaces)    
+    tempLastNameOfDirector.resize(i+3,' ');
+    
+    // Put comma after the last letter of  tempLastNameOfDirector
+    tempLastNameOfDirector[i+1] = ',';
 
-	// Concatenate two strings 
-	fullNameOfDirector= tempLastNameOfDirector+firstNameOfDirector;
+    // Concatenate two strings 
+    fullNameOfDirector= tempLastNameOfDirector+firstNameOfDirector;
 
-	// Resize fullNameOfDirector 25 and pad with spaces
-	fullNameOfDirector.resize(25,' ');
+    // Resize fullNameOfDirector 25 and pad with spaces
+    fullNameOfDirector.resize(25,' ');
 
 
 }

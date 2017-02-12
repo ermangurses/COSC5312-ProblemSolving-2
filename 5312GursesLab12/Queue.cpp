@@ -3,7 +3,7 @@
 * Date:   April 16, 2012                                                          
 *                                                                            
 * Purpose:  This file implements the Queue class using templates in 
-			a Queue abstract data type using pointers.                          
+            a Queue abstract data type using pointers.                          
 ***********************************************************************/
 #include "Queue.h"
 
@@ -52,9 +52,9 @@ Queue<Type>::~Queue()
 * Pre-condition:  Class property “size” contains a known value.              
 *                                                                            
 * Post-condition: If the Queue is empty                                       
-*		    a boolean value of true is returned	                  
-*	          Else	                                       
-*		    a boolean value of false is returned.                    
+*            a boolean value of true is returned                      
+*              Else                                           
+*            a boolean value of false is returned.                    
 ***********************************************************************/
 template <class Type>
 bool Queue<Type>::isEmpty()
@@ -68,12 +68,12 @@ bool Queue<Type>::isEmpty()
 * Pre-condition:  Class property “size” contains a known value.              
 *                                                                            
 * Post-condition: The length of the Queue has been returned to the 
-				  calling function.                                                  
+                  calling function.                                                  
 ***********************************************************************/
 template <class Type>
 int  Queue<Type>::sizeOf()
 {
-	return size;
+    return size;
 }
 
 
@@ -81,34 +81,34 @@ int  Queue<Type>::sizeOf()
 * enqueue                                                                 
 *                                                                            
 * Purpose: This function inserts a new set of data at the rear of the 
-		   Queue.  
+           Queue.  
 *                                                                            
 * Pre-condition:  The calling function has requested a new set of data 
-				  be placed at the end of the Queue.                             
+                  be placed at the end of the Queue.                             
 *                                                                            
 * Post-condition:  The new data have been place at the end of the 
-				   Queue       
+                   Queue       
 ***********************************************************************/
 template <class Type>
 void Queue<Type>::enqueue(Type dataIn)
 {
     QNode *newPtr = new QNode;
-	newPtr->nodeData = dataIn;
-	newPtr->next = NULL;
+    newPtr->nodeData = dataIn;
+    newPtr->next = NULL;
 
-	if(isEmpty())
-	{
-		head = newPtr;
-	
-	}
-	else
-	{
-		tail->next=newPtr;
-	
-	}
+    if(isEmpty())
+    {
+        head = newPtr;
+    
+    }
+    else
+    {
+        tail->next=newPtr;
+    
+    }
 
-	tail = newPtr;
-	size++;
+    tail = newPtr;
+    size++;
 
 }
 
@@ -117,7 +117,7 @@ void Queue<Type>::enqueue(Type dataIn)
 * dequeue                                                                
 *                                                                            
 * Purpose: This function removes the first set of data at the 
-		   beginning of the Queue.        
+           beginning of the Queue.        
 *                                                                            
 * Pre-condition:  The calling function has requested the data at the         
 *                 beginning of the Queue be removed.                          
@@ -126,8 +126,8 @@ void Queue<Type>::enqueue(Type dataIn)
 *                   false is returned                                        
 *                 Else                                                      
 *                   the data at the front of the Queue has been 
-					removed 
-					and is available for use by the calling function &&      
+                    removed 
+                    and is available for use by the calling function &&      
 *                   true is returned.                                       
 ***********************************************************************/
 template <class Type>
@@ -142,14 +142,14 @@ bool Queue<Type>::dequeue(Type & dataOut)
     dataOut = temp -> nodeData;
     head = head -> next;
     
-	if(tail == temp)
+    if(tail == temp)
     {
         tail = NULL;
     }
     
-	delete temp;
+    delete temp;
     
-	size--;
+    size--;
 
     return true;
 }
@@ -161,7 +161,7 @@ bool Queue<Type>::dequeue(Type & dataOut)
 * Purpose: This function returns the data at the beginning of the Queue
 *                                                                            
 * Pre-condition: The calling function has requested a copy of the data 
-				 at the beginning of the Queue be retrieved.                                 
+                 at the beginning of the Queue be retrieved.                                 
 *                                                                            
 * Post-condition: A copy of at the beginning of the Queue has been      
 *                 returned to the calling function.                          
@@ -169,12 +169,12 @@ bool Queue<Type>::dequeue(Type & dataOut)
 template <class Type>
 bool Queue<Type>::queueFront(Type & copyData)
 {
-	if(isEmpty())
+    if(isEmpty())
     {
         return false;
     }
     
-	copyData = head->nodeData;
+    copyData = head->nodeData;
 
 }
 
@@ -233,7 +233,7 @@ template <class Type>
 Queue<Type>::Queue(const Queue & otherQueue )
 {
 
-	copyQueue(otherQueue);
+    copyQueue(otherQueue);
 
 }
 

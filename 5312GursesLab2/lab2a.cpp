@@ -2,28 +2,28 @@
 /********************************************************************
 * File Name:  Lab2a.cpp
 *
-* Author:     Erman Gurses
+* Author:  Erman Gurses
 *
-* Course:     COSC 5312 - Foundations in Programming and Problem 
-*           Solving II,  A03539870
+* Course:  COSC 5312 - Foundations in Programming and Problem 
+*          Solving II,  A03539870
 * 
-* Date:       March 22, 2012
+* Date:    March 22, 2012
 *
-* Purpose:    This program demonstrates kind of playGame which is named
-*        Pig.
+* Purpose: This program demonstrates kind of playGame which is named
+*          Pig.
 *          
 *
-* Input:      The user will input string which is players names and 
-*        char for making decisionRollAgain to end turn or to 
-        continue.  
+* Input:  The user will input string which is players names and 
+*         char for making decisionRollAgain to end turn or to 
+          continue.  
 *
-* Output:    The output will be on the screen. First, before users 
-*        start the playGame, the output gives some instructions
-*        about the playGame. While they are playing the playGame,
-*        the output will let them know current rolled number and 
-*        total scores of players. At the end of the playGame the
-*        output let players know what total scores they have
-*        who wins the playGame.
+* Output: The output will be on the screen. First, before users 
+*         start the playGame, the output gives some instructions
+*         about the playGame. While they are playing the playGame,
+*         the output will let them know current rolled number and 
+*         total scores of players. At the end of the playGame the
+*         output let players know what total scores they have
+*         who wins the playGame.
 ********************************************************************/
 
 #include <iostream>
@@ -48,17 +48,17 @@ int main(int argc, char* argv[])
   // Call playGame function
   playGame(); 
   
-  // Tell system program is finished.
+  // Tell system program is finished without error.
     return 0;
 }
 
 /**********************************************************************
 *             showInstructions
 * 
-* Purpose : The purpose is that give some basic instructions
+* Purpose: The purpose is that give some basic instructions
 *           about game. 
 * 
-* Pre-condition  : None.
+* Pre-condition: None.
 * 
 * Post-condition: The instructions have been showed. 
 **********************************************************************/
@@ -92,9 +92,9 @@ void showInstructions ()
 /**********************************************************************
 *             roll
 * 
-* Purpose    : Generate random number between 1-6 inclusive.    
+* Purpose: Generate random number between 1-6 inclusive.    
 * 
-* Pre-condition  : Call srand() function with time(0) function to set the
+* Pre-condition: Call srand() function with time(0) function to set the
                    seed to be used by random number. 
 * 
 * Post-condition: Random number generated between 1-6 inclusive and
@@ -123,7 +123,7 @@ int roll()
 * 
 * Post-condition: If "scoreP1" greater than "scoreP2" prompt the game
 *                   is finished and winner is "player1" and show 
-*           "       scoreP1" and "scoreP2".
+*                   "scoreP1" and "scoreP2".
 *                 else
 *                   prompt the game is finished and winner is 
 *                   "player2" and show "scoreP1" and "scoreP2".
@@ -153,10 +153,10 @@ void winner(string player1, string player2, int scoreP1, int scoreP2)
 /**********************************************************************
 *             playGame
 * 
-* Purpose    : This function applies the game according to its 
+* Purpose: This function applies the game according to its 
 *          instructions. 
 * 
-* Pre-condition  : The instructions have been showed.  
+* Pre-condition: The instructions have been showed.  
 * 
 * Post-condition: The game is quit. 
 **********************************************************************/
@@ -211,24 +211,23 @@ void playGame()
 /**********************************************************************
 *             currentPlayer
 * 
-* Purpose    : This function gets player's name and its old score
-          from playGame function  then it applies this current 
-          players "roll"
+* Purpose: This function gets player's name and its old score
+           from playGame function  then it applies this current 
+           players "roll"
 * 
-* Pre-condition  : Player's name has entered past turn's score
-          has accumulated
+* Pre-condition: Player's name has entered past turn's score
+                 has accumulated
 * 
 * Post-condition: turnScore has returned
           If rolledScore equal 1
-           turnScore=0;
-           return turnScore
+             turnScore=0;
+            return turnScore
 
           if score+turnScore>100
-           return turnScore
+            return turnScore
 
           if decisionRollAgain not equal 'R' and 
              decisionRollAgain not equal'r'
-
             return turnScore
 **********************************************************************/
 int currentPlayer(string playerName, int score)
@@ -236,9 +235,8 @@ int currentPlayer(string playerName, int score)
   char decisionRollAgain;
 
   int turnScore=0,
-    rolledScore=0;
+      rolledScore=0;
 
-  
     cout<<"\n\n-------------Now "<<playerName<<"'s turn-------------"
     <<"\n\n";
     cout<<playerName<<"'s score is "<<score<<endl;  
@@ -290,7 +288,6 @@ int currentPlayer(string playerName, int score)
       }
        cout<<"------------------------------------------"<<endl;
     }
-
   return turnScore;  
 }
 

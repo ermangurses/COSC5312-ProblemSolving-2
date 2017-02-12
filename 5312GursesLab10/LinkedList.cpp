@@ -3,7 +3,7 @@
 * Date:   April 16, 2012                                                          
 *                                                                            
 * Purpose:  This file implements the LinkedList class using templates in 
-			a LinkedList abstract data type using pointers.                          
+            a LinkedList abstract data type using pointers.                          
 ***********************************************************************/
 
 #include "LinkedList.h"
@@ -53,9 +53,9 @@ LinkedList<Key, Type>::~LinkedList()
 * Pre-condition:  Class property “size” contains a known value.              
 *                                                                            
 * Post-condition: If the LinkedList is empty                                       
-*		    a boolean value of true is returned	                  
-*	          Else	                                       
-*		    a boolean value of false is returned.                    
+*            a boolean value of true is returned                      
+*              Else                                           
+*            a boolean value of false is returned.                    
 ***********************************************************************/
 template <class Key, class Type>
 bool LinkedList<Key, Type>::isEmpty()
@@ -70,93 +70,93 @@ bool LinkedList<Key, Type>::isEmpty()
 * Pre-condition:  Class property “size” contains a known value.              
 *                                                                            
 * Post-condition: The length of the LinkedList has been returned to the 
-				  calling function.                                                  
+                  calling function.                                                  
 ***********************************************************************/
 template <class Key, class Type>
 int  LinkedList<Key, Type>::sizeOf()
 {
 
-	return size;
+    return size;
 }
 
 /***********************************************************************
 * insertFront 
 *                                                                            
 * Purpose: This function inserts a new set of data at the front of 
-		   the LinkedList. 
+           the LinkedList. 
 *                                                                            
 * Pre-condition:  The calling function has requested a new set of data 
-				  be placed at the beginning of the LinkedList.                       
+                  be placed at the beginning of the LinkedList.                       
 *                                                                            
 * Post-condition:  The new data have been place at the beginning of the 
-				   LinkedList 
+                   LinkedList 
 ***********************************************************************/
 
 template <class Key, class Type>
 void LinkedList <Key, Type>::insertFront(Key keyIn, Type dataIn)
 
 {
-	LNode * newPtr = new LNode;
-	newPtr->nodeKey = keyIn;
-	newPtr->nodeData = dataIn;
-	newPtr->next = head;
-	head = newPtr;
+    LNode * newPtr = new LNode;
+    newPtr->nodeKey = keyIn;
+    newPtr->nodeData = dataIn;
+    newPtr->next = head;
+    head = newPtr;
 
-	if(newPtr->next==NULL)
-	{	
-		tail=newPtr;
-	}
+    if(newPtr->next==NULL)
+    {    
+        tail=newPtr;
+    }
 
-	size++;
+    size++;
 }
 
 /***********************************************************************
 * insertRear                                                                 
 *                                                                            
 * Purpose: This function inserts a new set of data at the rear of the 
-		   LinkedList.  
+           LinkedList.  
 *                                                                            
 * Pre-condition:  The calling function has requested a new set of data 
-				  be placed at the end of the LinkedList.                             
+                  be placed at the end of the LinkedList.                             
 *                                                                            
 * Post-condition:  The new data have been place at the end of the 
-				   LinkedList       
+                   LinkedList       
 ***********************************************************************/
 
 template<class Key, class Type>
 void LinkedList<Key, Type>::insertRear(Key keyIn, Type dataIn)
 {
     LNode *newPtr = new LNode;
-	newPtr->nodeKey = keyIn;
-	newPtr->nodeData = dataIn;
-	newPtr->next = NULL;
+    newPtr->nodeKey = keyIn;
+    newPtr->nodeData = dataIn;
+    newPtr->next = NULL;
 
-	if(isEmpty())
-	{
-		head = newPtr;
-	
-	}
-	else
-	{
-		tail->next=newPtr;
-	
-	}
+    if(isEmpty())
+    {
+        head = newPtr;
+    
+    }
+    else
+    {
+        tail->next=newPtr;
+    
+    }
 
-	tail = newPtr;
-	size++;
+    tail = newPtr;
+    size++;
 
 }
 /***********************************************************************
 * insertInOrder                                                              
 *                                                                            
 * Purpose: This function adds a new set of data to the LinkedList 
-		   in ascending order.                                                            
+           in ascending order.                                                            
 *                                                                            
 * Pre-condition:  The calling function has requested a set of data be 
-				  placed in the LinkedList in ascending order.                            
+                  placed in the LinkedList in ascending order.                            
 *                                                                            
 * Post-condition: The new data have been added to the LinkedList in 
-				  ascending order
+                  ascending order
 ***********************************************************************/
 template<class Key, class Type>
 void LinkedList<Key, Type>::insertInOrder(Key keyIn, Type dataIn)
@@ -168,7 +168,7 @@ void LinkedList<Key, Type>::insertInOrder(Key keyIn, Type dataIn)
      * 4. goes in the middle */
 
     if(isEmpty()) 
-	{
+    {
         insertFront(keyIn, dataIn);
         return;
     }
@@ -200,7 +200,7 @@ void LinkedList<Key, Type>::insertInOrder(Key keyIn, Type dataIn)
         prevPtr -> next = newPtr;
         size++;
 
-		return;
+        return;
     }
 
     /* all options covered, only thing left is... */
@@ -211,7 +211,7 @@ void LinkedList<Key, Type>::insertInOrder(Key keyIn, Type dataIn)
 * removeFront                                                                
 *                                                                            
 * Purpose: This function removes the first set of data from the 
-		   LinkedList.        
+           LinkedList.        
 *                                                                            
 * Pre-condition:  The calling function has requested the data at the         
 *                 beginning of the LinkedList be removed.                          
@@ -220,8 +220,8 @@ void LinkedList<Key, Type>::insertInOrder(Key keyIn, Type dataIn)
 *                   false is returned                                        
 *                 Else                                                      
 *                   the data at the front of the LinkedList has been 
-					removed 
-					and is available for use by the calling function &&      
+                    removed 
+                    and is available for use by the calling function &&      
 *                   true is returned.                                       
 ***********************************************************************/
 
@@ -238,14 +238,14 @@ bool LinkedList<Key, Type>::removeFront(Key &keyOut, Type & dataOut)
     dataOut = temp -> nodeData;
     head = head -> next;
     
-	if(tail == temp)
+    if(tail == temp)
     {
         tail = NULL;
     }
     
-	delete temp;
+    delete temp;
     
-	size--;
+    size--;
 
     return true;
 }
@@ -254,17 +254,17 @@ bool LinkedList<Key, Type>::removeFront(Key &keyOut, Type & dataOut)
 * removeRear                                                                 
 *                                                                            
 * Purpose: This function removes the last set of data from the 
-		   LinkedList.         
+           LinkedList.         
 *                                                                            
 * Pre-condition:  The calling function has requested the data at the 
-				  end of the LinkedList be removed.                                       
+                  end of the LinkedList be removed.                                       
 *                                                                            
 * Post-condition: If the LinkedList is empty                                       
 *                   false is returned                                        
 *                 Else                                                       
 *                   the data at the rear of the LinkedList has been 
-					removed and is available for use by the calling 
-					function && true is returned.                                          
+                    removed and is available for use by the calling 
+                    function && true is returned.                                          
 ***********************************************************************/
 
 template <class Key, class Type>
@@ -281,12 +281,12 @@ bool LinkedList<Key, Type>::removeRear(Key & keyOut, Type & dataOut)
 
     for(int i=1; i < size-1; i++)
     {
-		temp=temp->next;
-	}
+        temp=temp->next;
+    }
 
     delete tail;
     
-	if(size==1) 
+    if(size==1) 
     {
         tail = NULL;
         head = NULL;
@@ -305,14 +305,14 @@ bool LinkedList<Key, Type>::removeRear(Key & keyOut, Type & dataOut)
 * remove                                                                     
 *                                                                            
 * Purpose: This function removes a specified set of data from the 
-		   LinkedList.      
+           LinkedList.      
 *                                                                            
 * Pre-condition:  The calling function has requested a specified set of 
-				  data be removed from the LinkedList.                                  
+                  data be removed from the LinkedList.                                  
 *                                                                            
 * Post-condition: If the specified data are found in the LinkedList                
 *                    that data are removed and is available to the 
-					 calling function &&        
+                     calling function &&        
 *                    true is returned                                        
 *                 Else                                                       
 *                    false is returned.                                      
@@ -322,9 +322,9 @@ template <class Key, class Type>
 bool LinkedList<Key, Type>::remove(Key & keyOut, Type & dataOut)
 {
     if(isEmpty())
-	{
+    {
         return false;
-	}
+    }
 
     int location;
 
@@ -343,22 +343,22 @@ bool LinkedList<Key, Type>::remove(Key & keyOut, Type & dataOut)
         LNode *curr = head,
               *prev = head;
 
-		for(int i=1; i<location; i++)
-		{
-			prev = curr;
-			curr = curr->next;
-		
-		}
+        for(int i=1; i<location; i++)
+        {
+            prev = curr;
+            curr = curr->next;
+        
+        }
 
-		keyOut = curr->nodeKey;
-		dataOut = curr->nodeData;
-		prev->next = curr->next;
-		delete curr;
-		size--;
-		return true;
+        keyOut = curr->nodeKey;
+        dataOut = curr->nodeData;
+        prev->next = curr->next;
+        delete curr;
+        size--;
+        return true;
     }
 
-	return false;
+    return false;
 }
 
 /***********************************************************************
@@ -367,44 +367,44 @@ bool LinkedList<Key, Type>::remove(Key & keyOut, Type & dataOut)
 * Purpose: This function searches the LinkedList for specific data .               
 *                                                                            
 * Pre-condition:  The calling function has requested a specific key be       
-*		  found and, if present, its location be noted.	  
+*          found and, if present, its location be noted.      
 *                                                                            
-* Post-condition: If the specified key is in the LinkedList		        
-*		            True is returned  &&			  
-*		            The key's location is available to the 
-					calling function. 
-*		  		  Else                                                  
-*	    	    	False is returned.                                      
+* Post-condition: If the specified key is in the LinkedList                
+*                    True is returned  &&              
+*                    The key's location is available to the 
+                    calling function. 
+*                    Else                                                  
+*                    False is returned.                                      
 ***********************************************************************/
 
 template <class Key, class Type>
 bool LinkedList<Key, Type>::search(Key findThis, int & location)
-	 
+     
 {
 
-	if(isEmpty())
-	{
+    if(isEmpty())
+    {
         return false;
-	}
+    }
 
-	 LNode * temp = head;
+     LNode * temp = head;
 
-	 location = 1;
-	 
-	 while(location <= size) 
-	 {
-		 if(findThis == temp->nodeKey)  
-		 {
-			return true;
-		 
-		 }
+     location = 1;
+     
+     while(location <= size) 
+     {
+         if(findThis == temp->nodeKey)  
+         {
+            return true;
+         
+         }
 
-		 location++;
+         location++;
 
-		 temp=temp->next;
-	 }
+         temp=temp->next;
+     }
 
-	 return false;
+     return false;
     
 }
 
@@ -412,11 +412,11 @@ bool LinkedList<Key, Type>::search(Key findThis, int & location)
 * retrieve                                                 
 *                                                                            
 * Purpose: This function returns the data found at the requested 
-		   location.   
+           location.   
 *                                                                            
 * Pre-condition: The location of the desired data has been determined &&    
 *                the calling function has requested a copy of the data 
-				 at that location be retrieved.                                 
+                 at that location be retrieved.                                 
 *                                                                            
 * Post-condition: A copy of the data at the specified location has been      
 *                 returned to the calling function.                          
@@ -427,12 +427,12 @@ Type LinkedList<Key, Type>::retrieve(int location)
 {
     LNode * temp = head;
 
-	for(int i=1; i<location; i++)
-	{
-		temp = temp->next;		
-	}
+    for(int i=1; i<location; i++)
+    {
+        temp = temp->next;        
+    }
 
-	return temp->nodeData;
+    return temp->nodeData;
 
 }
 
@@ -448,7 +448,7 @@ Type LinkedList<Key, Type>::retrieve(int location)
 
 template<class Key, class Type>
 void LinkedList<Key, Type>::copyLinkedList
-									(const LinkedList & otherLinkedList)
+                                    (const LinkedList & otherLinkedList)
 {
     LNode *toPtr;
     LNode *fromPtr;
@@ -468,7 +468,7 @@ void LinkedList<Key, Type>::copyLinkedList
     head -> nodeKey = fromPtr -> nodeKey;
     head -> nodeData = fromPtr -> nodeData;
     fromPtr = fromPtr -> next;
-	
+    
     while(fromPtr != NULL)
     {
         toPtr -> next = new LNode;
@@ -496,7 +496,7 @@ template <class Key, class Type>
 LinkedList<Key,Type>::LinkedList(const LinkedList & otherLinkedList )
 {
 
-	copyLinkedList(otherLinkedList);
+    copyLinkedList(otherLinkedList);
 
 }
 
@@ -505,7 +505,7 @@ LinkedList<Key,Type>::LinkedList(const LinkedList & otherLinkedList )
 *
 * Purpose: This function allows the driver file to assign the contents of
 *          one LinkedList object to a second, different LinkedList 
-		  object.
+          object.
 *
 * Pre-condition: "otherLinkedList" exists.
 *
@@ -515,7 +515,7 @@ LinkedList<Key,Type>::LinkedList(const LinkedList & otherLinkedList )
 
 template <class Key, class Type>
 const LinkedList<Key,Type>& LinkedList<Key,Type>::operator=
-									(const LinkedList& otherLinkedList)
+                                    (const LinkedList& otherLinkedList)
 {
     if(this != &otherLinkedList)// checking for self-aasignment
     {
@@ -523,9 +523,8 @@ const LinkedList<Key,Type>& LinkedList<Key,Type>::operator=
         Type tempT;
 
         while(removeFront(tempK, tempT));
-        
-        copyLinkedList(otherLinkedList);
-        
+
+        copyLinkedList(otherLinkedList);      
     }
 
     return *this;

@@ -8,18 +8,20 @@
 * 
 * Date:       February 1, 2012
 *
-* Purpose:    The purpose is that read unformatted records from (lab3input.txt)
-*            file put them into the other file (lab3output.txt) as a formatted 
-*            style. Then let to user enter new record After user enters record
-*            the program formats this recors and append in to lab3output.txt 
-*            which is formatted file. Dublicate records are allowed in this 
-*            program. Until user want to exit program, the program will work.
+* Purpose: The purpose is that read unformatted records from
+*           (lab3input.txt) file put them into the other file 
+*           (lab3output.txt)as a formatted style. Then let to
+*           user enter new record After user enters record the 
+*           program formats this recors and append in to 
+*           lab3output.txt which is formatted file. Dublicate 
+*           records are allowed in this program. Until user 
+*           want to exit program, the program will work.
 *          
 *
-* Input:      The Inputs are unformatted file which is named lab3input.txt 
-*            and user can enter input from keyboard a record.   
+* Input: The Inputs are unformatted file which is named lab3input.txt 
+*        and user can enter input from keyboard a record.   
 *
-* Output:     The output is a formatted record into a lab3out.txt file 
+* Output: The output is a formatted record into a lab3out.txt file 
 ********************************************************************/
 #include <iostream>
 #include <fstream>
@@ -31,7 +33,9 @@ void openInputFile(ifstream &inFile);
 void readInputFile(ifstream &inFile);
 bool openOutputFile(ofstream & outFile);
 bool openOutputFileAppend(ofstream &outFile);
-void writeOutputFile(ofstream & outfile, string lastName, string firstName, string streetAddress, string city,string state, string zip);
+void writeOutputFile(ofstream & outfile, string lastName, 
+string firstName, string streetAddress, string city, 
+string state, string zip);
 void userTransactions();
 int  checkLength(string, int, int);
 int  existAlpha(string word);
@@ -40,18 +44,10 @@ int  existDigit(string word);
 int main()
 {
    ifstream inFile;
-  
-
    openInputFile(inFile);
    readInputFile(inFile);
-
    userTransactions();
-
-
-  
    cout <<"\nProgram finished!\n";
-
-
   return 0;
 }
 
