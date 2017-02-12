@@ -141,7 +141,6 @@ void winner(string player1, string player2, int scoreP1, int scoreP2)
   }
   else
   {
-  
     cout<<"The Game is finised"<<endl;
     cout<<"Congratulations!!! " <<player2<<". You are the Winner."
     <<endl;
